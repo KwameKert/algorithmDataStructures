@@ -1,5 +1,6 @@
 #Binary search using the recursive approach
 
+#Time 0(log(n)) | space O(log(n))
 
 def binSearch(array, target):
 
