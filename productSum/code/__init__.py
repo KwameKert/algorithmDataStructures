@@ -15,8 +15,8 @@ def productSum(array, maxDepth=1):
 
 
 
-result = productSum([5,2,[7,-1],3,[6,[-13,8],4]])
+#result = productSum([5,2,[7,-1],3,[6,[-13,8],4]])
 #result = productSum([1,2,[2,3,3],3,4,5])
-print(result)
+#print(result)
 
 
