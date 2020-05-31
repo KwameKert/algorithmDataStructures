@@ -10,14 +10,13 @@ def moveElement(args, target):
         leftItem = args[left]
         rightItem = args[right]
 
-        #return
+      # if increase right if rightItem is equal to targe
         if rightItem == target:
-            print("right item", right)
             right -= 1
+      # if left item is equal to target swap values with right and increase left value
         elif leftItem == target:
             #swap elements
             args[left], args[right] = args[right], args[left]
-            print(args)
             left += 1
 
         else:
@@ -26,5 +25,5 @@ def moveElement(args, target):
     return args
 
 
-RESULT = moveElement([2, 1, 2, 2, 2, 2, 3, 4, 5, 2], 2)
-print(RESULT)
+#RESULT = moveElement([2, 1, 2, 2, 2, 2, 3, 4, 5, 2], 2)
+#print(RESULT)
