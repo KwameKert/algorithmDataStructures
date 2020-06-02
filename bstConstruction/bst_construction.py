@@ -44,7 +44,8 @@ class BST:
 
     def remove(self, value, parentNode = None):
         foundNode = self.lookup(value)
-        return False  if foundNode is False
+        if foundNode is False:
+            return False
         currentNode = self
 
         while currentNode is not None:
