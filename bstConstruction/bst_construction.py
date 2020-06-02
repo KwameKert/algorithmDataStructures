@@ -5,7 +5,7 @@ class BST:
         self.right = None
 
 
-    def insert(value):
+    def insert(self, value):
         currentNode = self
         #loop through tree to find the node to insert
         while currentNode:
@@ -25,7 +25,7 @@ class BST:
                     currentNode = currentNode.right
         return self
 
-    def lookup(value):
+    def lookup(self, value):
         currentNode = self
         #loop through tree
         while currentNode:
@@ -40,3 +40,47 @@ class BST:
 
         #if node not found return False
         return False
+
+
+    def remove(self, value, parentNode = None):
+        foundNode = self.lookup(value)
+        return False  if foundNode is False
+        currentNode = self
+
+        while currentNode is not None:
+            if value < currentNode.value:
+                parentNode = currentNode
+                currentNode = currentNode.left
+
+            elif value > currentNode.value:
+                parentNode = currentNode
+                currentNode = currentNode.right
+
+            else:
+                # node found currentNode has two children
+                if currentNode.left is not None and currentNode.right is not None:
+                currentNode.value = currentNode.right.getMinValue()
+                currentNode.right.remove(currentNode.value, currentNode)
+
+                #if current node has only one chile
+                elif parentNode.left = currentNode
+                    parentNode.left = currentNode.left if currentNode.left is None else currentNode.right
+                elif parentNode.right = currentNode
+                    parentNode.right = currentNode.right if currentNode.right is None else currentNode.left
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
