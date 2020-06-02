@@ -59,18 +59,38 @@ class BST:
             else:
                 # node found currentNode has two children
                 if currentNode.left is not None and currentNode.right is not None:
-                currentNode.value = currentNode.right.getMinValue()
-                currentNode.right.remove(currentNode.value, currentNode)
+                    currentNode.value = currentNode.right.getMinValue()
+                    currentNode.right.remove(currentNode.value, currentNode)
 
-                #if current node has only one chile
+                #if node to be removed is root
+                elif parentNode is None:
+                    #if node has only left children
+                    if currentNode.left is not None:
+                        currentNode.value = currentNode.left.value
+                        currentNode.left = currentNode.left.left
+                        currentNode.right = currentNode.left.right
+                    #if node has only right children
+                    elif currentNode.right is not None:
+                        currentnode.value = currentNode.right.value
+                        currentNode.left = currentNode.right.left
+                        currentNode.right = currentNode.right.right
+                    else:
+                        #if no parent and has no child we can delete the root node
+                        currentNode.value = None
+                #if current node has only one child
                 elif parentNode.left = currentNode
                     parentNode.left = currentNode.left if currentNode.left is None else currentNode.right
                 elif parentNode.right = currentNode
                     parentNode.right = currentNode.right if currentNode.right is None else currentNode.left
 
+                #found node to delete hence break from while loop
+                break
 
-
-
+    getMinValue(self):
+        currentnode = self
+        while currentNode.left is not None:
+            currentNode = currentNode.left
+        return currentNode.value
 
 
 
