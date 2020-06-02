@@ -2,40 +2,33 @@
 #finding the smallest difference from two arrays
 
 def smallestDifference(firstList, secondList):
-    #sort arrays
+    #sorting both arrays
     firstList.sort()
     secondList.sort()
 
-    #pointers
-    firstPointer= 0
-    secondPointer = 0
-    smallest = float("inf")
-    current = float("inf")
     smallestPair = []
+    idxOne = 0
+    idxTwo = 0
 
-    while firstPointer < len(firstList) and secondPointer < len(secondList):
-        #getting value from each array
-        firstNumber = firstList[firstPointer]
-        secondNumber = secondList[secondPointer]
+    current = float("inf")
+    smallest = float("inf")
 
-        #get current value
+    #loop through both arrays till the end of its range
+    while idxOne < len(firstList) and idxTwo < len(secondList):
+        firstNumber = firstList[idxOne]
+        secondNumber = secondList[idxTwo]
+
         current = abs(firstNumber - secondNumber)
 
-        #if first item less than second item increase firstPointer else do otherwise
         if firstNumber < secondNumber:
-            firstPointer += 1
+            idxOne += 1
         elif firstNumber > secondNumber:
-            secondPointer +=1
+            idxTwo += 1
         else:
             return [firstNumber, secondNumber]
 
-        #recalculate the value of smallest
         if smallest > current:
             smallest = current
-            smallestPair = [firstNumber , secondNumber]
+            smallestPair = [firstNumber, secondNumber]
 
     return smallestPair
-
-
-#RESULT = smallestDifference([3, 2, -1, 0, 5], [4, -2, 7, -9])
-#print(RESULT)

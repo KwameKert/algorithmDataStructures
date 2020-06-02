@@ -2,7 +2,6 @@
 #loop through each element comparing if its in order with the next element.
 
 def bubbleSort(args):
-
     isSorted = False
     counter = 0
 
@@ -18,10 +17,7 @@ def bubbleSort(args):
 
     return args
 
-
 def swap(i, j, args):
-
      args[i], args[j] = args[j], args[i]
-
 
 #print(bubbleSort([9, 4, 2, 0, 89, 90, 70]));

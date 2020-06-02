@@ -14,5 +14,4 @@ def fib(n):
 
     return lastTwo[1] if n > 1 else lastTwo[0]
 
-
 print(fib(9))
