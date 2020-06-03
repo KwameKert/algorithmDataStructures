@@ -72,23 +72,23 @@ class BST:
                         currentNode.right = currentNode.left.right
                     #if node has only right children
                     elif currentNode.right is not None:
-                        currentnode.value = currentNode.right.value
+                        currentNode.value = currentNode.right.value
                         currentNode.left = currentNode.right.left
                         currentNode.right = currentNode.right.right
                     else:
                         #if no parent and has no child we can delete the root node
                         currentNode.value = None
                 #if current node has only one child
-                elif parentNode.left = currentNode
+                elif parentNode.left == currentNode:
                     parentNode.left = currentNode.left if currentNode.left is None else currentNode.right
-                elif parentNode.right = currentNode
+                elif parentNode.right == currentNode:
                     parentNode.right = currentNode.right if currentNode.right is None else currentNode.left
 
                 #found node to delete hence break from while loop
                 break
 
-    getMinValue(self):
-        currentnode = self
+    def getMinValue(self):
+        currentNode = self
         while currentNode.left is not None:
             currentNode = currentNode.left
         return currentNode.value
